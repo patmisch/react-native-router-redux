@@ -1,5 +1,6 @@
 import Tabs from 'react-native-tabs';
 import React, { Component, Image, StyleSheet, Text, View } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const onSelect = props => el => {
   props.actions.changeTab({
@@ -16,7 +17,7 @@ const onSelect = props => el => {
 const imageStyle = props => ({
   height: 25,
   resizeMode: 'contain',
-  tintColor: props.selectionColor || '#929292',
+  tintColor: props.selectionColor || 'white',
   width: 30,
 });
 
@@ -33,10 +34,9 @@ const tabContainerStyle = () => ({
 
 const textStyle = props => ({
   color: props.selectionColor || '#929292',
-  fontSize: 10,
+  fontSize: 12,
   letterSpacing: 0.2,
   marginBottom: 2,
-  marginTop: 4,
 });
 
 class TabBarIcon extends Component {
@@ -46,9 +46,11 @@ class TabBarIcon extends Component {
     return (
       <View name={name} style={tabContainerStyle()}>
         {tabItem.icon &&
-          <Image
-            source={tabItem.icon}
-            style={imageStyle(this.props)}
+          <Icon
+            name={tabItem.icon}
+            color={this.props.selectionColor || 'white'}
+            size={30}
+            borderRadius={0}
             />
         }
         {tabItem.title &&
