@@ -48,7 +48,7 @@ class TabBarIcon extends Component {
         {tabItem.icon &&
           <Icon
             name={tabItem.icon}
-            color={this.props.selectionColor || 'white'}
+            color={this.props.selectionColor || 'black'}
             size={30}
             borderRadius={0}
             />
