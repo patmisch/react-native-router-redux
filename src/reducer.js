@@ -151,6 +151,7 @@ export default createReducer(initialState, {
       activeTab: null,
       mode: actionTypes.ROUTER_RESET,
       tabs: {},
+      routeStacks: {}
     });
   }
 });
